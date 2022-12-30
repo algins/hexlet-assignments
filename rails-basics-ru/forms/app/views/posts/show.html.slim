@@ -1,0 +1,15 @@
+h1
+  | Post #
+  = @post.id
+p
+  = @post.title
+p
+  = @post.summary
+p
+  = @post.body
+- if @post.published
+  p
+    | Published
+=> link_to 'Edit', edit_post_path(@post)
+=> link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Delete post?' }
+= link_to 'Back', posts_path
