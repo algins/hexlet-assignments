@@ -1,0 +1,18 @@
+h1
+  | Task #
+  = @task.id
+p
+  = @task.name
+p
+  = @task.description
+p
+  = @task.status
+p
+  = @task.creator
+p
+  = @task.performer
+p
+  = @task.completed
+= link_to 'Edit', edit_task_path(@task)
+= link_to 'Delete', task_path(@task), method: :delete, data: { confirm: 'Delete task?' }
+= link_to 'Back', tasks_path
